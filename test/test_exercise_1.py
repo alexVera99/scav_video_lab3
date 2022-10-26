@@ -5,7 +5,7 @@ import unittest
 
 class TestExercise1(unittest.TestCase):
     def setup_class(self):
-        self.video_filename = pathlib.Path("../../data/bbb.mp4")
+        self.video_filename = pathlib.Path("../data/bbb.mp4")
         self.video_filename_fake = pathlib.Path("/fake/path")
 
     def test_get_metadata(self):
