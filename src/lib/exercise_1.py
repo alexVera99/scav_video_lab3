@@ -34,21 +34,15 @@ class FfmpegMetadataParser:
 
         # Duration
         duration_raw = str(self.__wrapper_grep(raw_data, "Duration")[0])
-        print(duration_raw)
         duration = duration_raw.split(",", 1)[0].split(": ", 1)[1]
-        print(duration)
 
         # bitrate
         bitrate_raw = str(self.__wrapper_grep(raw_data, "bitrate")[0])
         bitrate = duration_raw.split(",")[2].split(": ", 1)[1]
 
-        print(bitrate)
-
         # Streams
         streams_raw = self.__wrapper_grep(raw_data, "Stream")
-        print(streams_raw)
         num_streams = len(tuple(streams_raw))
-        print(num_streams)
         streams = []
 
         for _s in streams_raw:
