@@ -27,10 +27,14 @@ class TestExercise1(unittest.TestCase):
             ]
         }
 
-        metadata = ex1.get_metadata(self.video_filename)
+        parser = ex1.FfmpegMetadataParser()
+
+        metadata = parser.get_metadata(self.video_filename)
 
         self.assertDictEqual(metadata, expected_data)
 
     def test_get_metadata_no_such_a_file(self):
+        parser = ex1.FfmpegMetadataParser()
+
         with self.assertRaises(Exception):
-            ex1.get_metadata(self.video_filename_fake)
+            parser.get_metadata(self.video_filename_fake)
