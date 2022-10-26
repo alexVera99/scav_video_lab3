@@ -3,3 +3,5 @@ pydocstyle
 pycodestyle
 mypy
 pytest
+grep
+lazyme
