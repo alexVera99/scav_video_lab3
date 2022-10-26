@@ -38,7 +38,7 @@ class FfmpegMetadataParser:
 
         # bitrate
         bitrate_raw = str(self.__wrapper_grep(raw_data, "bitrate")[0])
-        bitrate = duration_raw.split(",")[2].split(": ", 1)[1]
+        bitrate = bitrate_raw.split(",")[2].split(": ", 1)[1]
 
         # Streams
         streams_raw = self.__wrapper_grep(raw_data, "Stream")
