@@ -4,6 +4,7 @@
 import pathlib
 import src.lib.utils as ut
 import grep.internals as grep
+import json
 
 
 class FfmpegMetadataParser:
@@ -78,7 +79,7 @@ def main():
 
     metadata = parser.get_metadata(video_filename)
 
-    print(metadata)
+    print(json.dumps(metadata, indent=4))
 
 
 if __name__ == "__main__":
