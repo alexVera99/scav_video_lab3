@@ -43,3 +43,8 @@ class TestExercise4(unittest.TestCase):
 
         self.assertListEqual(expected_result,
                              broadcasting_standards)
+
+    def test_analyze_no_such_file_or_directory(self):
+        analyzer = ex4.BroadcastingAnalyzer()
+        with self.assertRaises(Exception):
+            analyzer.analyze(self.video_filename_fake)
