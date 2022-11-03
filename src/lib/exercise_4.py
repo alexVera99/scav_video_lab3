@@ -39,7 +39,9 @@ def main():
     video_filename = pathlib.Path("../../data/bbb.mp4")
 
     analyzer = BroadcastingAnalyzer()
-    analyzer.analyze(video_filename)
+    standards = analyzer.analyze(video_filename)
+
+    print(standards)
 
 
 if __name__ == "__main__":
