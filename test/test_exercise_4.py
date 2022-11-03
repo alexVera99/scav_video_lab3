@@ -6,8 +6,8 @@ import pathlib
 class TestExercise4(unittest.TestCase):
     def setup_class(self):
         self.video_filename = pathlib.Path("../data/bbb.mp4")
-        self.video_filename_2 = pathlib.Path("../data/bbb_2_audio_codecs.mp4")
-        self.video_filename_3 = pathlib.Path("../data/bbb_audio_ac3.mp4")
+        self.video_filename_2 = pathlib.Path("data/bbb_2_audio_codecs.mp4")
+        self.video_filename_3 = pathlib.Path("data/bbb_audio_ac3.mp4")
         self.video_filename_fake = pathlib.Path("/fake/path")
 
     def test_analyze_broadcasting_standard(self):
