@@ -8,10 +8,10 @@ from src.lib import exercise_1 as ex1
 class BroadcastingAnalyzer:
     def __init__(self):
         self.standard_to_audio = {
-            "DVB-T": ["AAC", "AC-3", "MP3"],
+            "DVB-T": ["AAC", "AC3", "MP3"],
             "ISDB-T": ["AAC"],
-            "ATSC": ["AC-3"],
-            "DTMB": ["DRA", "AAC", "AC-3", "MP2", "MP3"]
+            "ATSC": ["AC3"],
+            "DTMB": ["DRA", "AAC", "AC3", "MP2", "MP3"]
         }
 
     def analyze(self, filename_path: pathlib.Path):
