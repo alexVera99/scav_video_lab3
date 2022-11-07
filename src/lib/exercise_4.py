@@ -1,11 +1,14 @@
 """Solution for Exercise 4."""
 import pathlib
 
-from src.lib import utils as ut
 from src.lib import exercise_1 as ex1
 
 
 class BroadcastingAnalyzer:
+    """
+    Analyze the audio metadata of a video and show \
+    in which standard such video can fit in.
+    """
     def __init__(self):
         self.standard_to_audio = {
             "DVB-T": ["AAC", "AC3", "MP3"],
@@ -15,6 +18,13 @@ class BroadcastingAnalyzer:
         }
 
     def analyze(self, filename_path: pathlib.Path):
+        """
+        Analyze the audio metadata of the given video to and \
+        return which standard it can fit in.
+
+        :param filename_path: video filename to be analyzed
+        :return: list of the standards the video can fit in.
+        """
         parser = ex1.FfmpegMetadataParser()
         metadata = parser.get_metadata(filename_path)
 
@@ -36,6 +46,11 @@ class BroadcastingAnalyzer:
 
 
 def main():
+    """
+    Test the above functions.
+
+    :return no return
+    """
     video_filename = pathlib.Path("../../data/bbb.mp4")
 
     analyzer = BroadcastingAnalyzer()

@@ -1,13 +1,15 @@
 """Solution for exercise 2."""
 import pathlib
-import src.lib.utils as ut
 import datetime
-from enum import Enum
-import src.lib.exercise_1 as ex1
 import json
+from enum import Enum
+
+import src.lib.utils as ut
+import src.lib.exercise_1 as ex1
 
 
 class Codec(Enum):
+    """Describe the possible codecs in our module"""
     ACC = "m4a"
     MP3 = "mp3"
 

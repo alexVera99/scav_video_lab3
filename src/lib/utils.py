@@ -42,7 +42,7 @@ def check_shell_stderr(stderr,
     stderr = stderr.decode('ascii')
 
     for _e in SHELL_ERRORS:
-        if not stderr.lower().__contains__(_e):
+        if _e not in stderr.lower():
             continue
         logging.error(logging_output + "\n" + stderr)
         raise Exception(logging_output)

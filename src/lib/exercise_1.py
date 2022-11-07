@@ -2,17 +2,20 @@
 
 
 import pathlib
-import src.lib.utils as ut
-import grep.internals as grep
 import json
+from grep import internals as grp
+
+import src.lib.utils as ut
 
 
 class FfmpegMetadataParser:
+    """Perform video metadata parsing."""
+
     def __wrapper_grep(self, text, pattern):
-        matches = grep.Matches(
+        matches = grp.Matches(
             text,
-            grep.Context(),
-            grep.Pattern(pattern)
+            grp.Context(),
+            grp.Pattern(pattern)
         )
 
         return tuple(matches)
@@ -73,6 +76,11 @@ class FfmpegMetadataParser:
 
 
 def main():
+    """
+    Test the above functions.
+
+    :return no return
+    """
     parser = FfmpegMetadataParser()
 
     video_filename = pathlib.Path("../../data/bbb.mp4")
