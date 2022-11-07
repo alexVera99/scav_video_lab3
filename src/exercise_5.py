@@ -11,6 +11,7 @@ import src.exercise_4 as ex_4
 
 class ExerciseExecutor:
     """Execute the exercise for P2."""
+
     @staticmethod
     def execute_exercise_1_option():
         """
