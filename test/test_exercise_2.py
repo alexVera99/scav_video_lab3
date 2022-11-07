@@ -1,14 +1,26 @@
+"""Test for Exercise 2."""
 import unittest
-from src import exercise_2 as ex2, exercise_1 as ex1
 import pathlib
 
+from src import exercise_2 as ex2, exercise_1 as ex1
 
 class TestExercise2(unittest.TestCase):
+    """
+    Test exercise_2.py
+    """
     def setup_class(self):
+        """
+        Initialize common data for all tests.
+        :return: no return
+        """
         self.video_filename = pathlib.Path("../data/bbb.mp4")
         self.video_filename_fake = pathlib.Path("/fake/path")
 
     def test_run_pipeline(self):
+        """
+        Test run_pipeline() function positively.
+        :return: no return
+        """
         expected_metadata = {
                             "duration": "00:01:00.00",
                             "bitrate": "674 kb/s",
@@ -42,6 +54,10 @@ class TestExercise2(unittest.TestCase):
                              expected_metadata)
 
     def test_run_pipeline_no_such_a_file(self):
+        """
+        Test run_pipeline() function when the given file \
+        does not exist.
+        :return: no return
+        """
         with self.assertRaises(Exception):
             ex2.run_pipeline(self.video_filename_fake, 0, 60)
-
