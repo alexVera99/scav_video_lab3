@@ -4,6 +4,7 @@ import pathlib
 
 from src import exercise_2 as ex2, exercise_1 as ex1
 
+
 class TestExercise2(unittest.TestCase):
     """
     Test exercise_2.py

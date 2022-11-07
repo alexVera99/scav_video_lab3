@@ -3,6 +3,7 @@ import pathlib
 import unittest
 from src import exercise_1 as ex1
 
+
 class TestExercise1(unittest.TestCase):
     """
     Test exercise_1.py
