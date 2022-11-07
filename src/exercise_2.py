@@ -4,8 +4,8 @@ import datetime
 import json
 from enum import Enum
 
-import src.lib.utils as ut
-import src.lib.exercise_1 as ex1
+import src.utils as ut
+import src.exercise_1 as ex1
 
 
 class Codec(Enum):
@@ -160,7 +160,7 @@ def main():
 
     :return no return
     """
-    filename_path = pathlib.Path("../../data/bbb.mp4")
+    filename_path = pathlib.Path("../data/bbb.mp4")
 
     mp4_container = run_pipeline(filename_path, 0, 60)
 

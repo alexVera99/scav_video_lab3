@@ -1,6 +1,5 @@
 import unittest
-from src.lib import exercise_1 as ex1
-from src.lib import exercise_2 as ex2
+from src import exercise_2 as ex2, exercise_1 as ex1
 import pathlib
 
 

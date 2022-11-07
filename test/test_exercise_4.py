@@ -1,5 +1,5 @@
 import unittest
-from src.lib import exercise_4 as ex4
+from src import exercise_4 as ex4
 import pathlib
 
 

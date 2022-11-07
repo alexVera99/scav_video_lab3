@@ -3,10 +3,10 @@ other exercises."""
 import pathlib
 import json
 
-import src.lib.exercise_1 as ex_1
-import src.lib.exercise_2 as ex_2
-import src.lib.exercise_3 as ex_3
-import src.lib.exercise_4 as ex_4
+import src.exercise_1 as ex_1
+import src.exercise_2 as ex_2
+import src.exercise_3 as ex_3
+import src.exercise_4 as ex_4
 
 
 def execute_exercise_1_option():

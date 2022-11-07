@@ -5,7 +5,7 @@ import pathlib
 import json
 from grep import internals as grp
 
-import src.lib.utils as ut
+import src.utils as ut
 
 
 class FfmpegMetadataParser:
@@ -83,7 +83,7 @@ def main():
     """
     parser = FfmpegMetadataParser()
 
-    video_filename = pathlib.Path("../../data/bbb.mp4")
+    video_filename = pathlib.Path("../data/bbb.mp4")
 
     metadata = parser.get_metadata(video_filename)
 

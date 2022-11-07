@@ -1,6 +1,6 @@
 """Solution for Exercise 3."""
 import pathlib
-import src.lib.utils as ut
+import src.utils as ut
 
 
 def get_video_dims(filename_path: pathlib.Path) -> tuple:
@@ -124,7 +124,7 @@ def main():
 
     :return no return
     """
-    video_filename = pathlib.Path("../../data/bbb.mp4")
+    video_filename = pathlib.Path("../data/bbb.mp4")
 
     resolutions_w_h = [[-1, 720], [-1, 480],
                        [360, 240], [160, 120]]

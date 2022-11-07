@@ -1,7 +1,7 @@
 """Solution for Exercise 4."""
 import pathlib
 
-from src.lib import exercise_1 as ex1
+from src import exercise_1 as ex1
 
 
 class BroadcastingAnalyzer:
@@ -51,7 +51,7 @@ def main():
 
     :return no return
     """
-    video_filename = pathlib.Path("../../data/bbb.mp4")
+    video_filename = pathlib.Path("../data/bbb.mp4")
 
     analyzer = BroadcastingAnalyzer()
     standards = analyzer.analyze(video_filename)
