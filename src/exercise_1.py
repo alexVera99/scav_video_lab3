@@ -20,14 +20,13 @@ class FfmpegMetadataParser:
 
         return tuple(matches)
 
-
     def get_metadata(self, filename_path: pathlib.Path) -> dict:
         """
-        Gets metadata from a video container
+        Get metadata from a video container.
+
         :param filename_path: video filename path
         :return: dictionary containing the metadata
         """
-
         cmd = ["ffmpeg", "-i", filename_path]
 
         _, stderr = ut.exec_in_shell_wrapper(cmd)

@@ -79,7 +79,7 @@ def get_new_scaling(width: int, height: int,
                     target_height: int = -1) -> tuple:
     """
     Given a dimension, it computes the other dimension as a multiple of 2.\
-    Only one target dimension should be given, and it should be a multiple
+    Only one target dimension should be given, and it should be a multiple \
     of 2. Example: automatic_scaling(w, h, target_width = 280), or \
     automatic_scaling(w, h, target_height = 280).
 

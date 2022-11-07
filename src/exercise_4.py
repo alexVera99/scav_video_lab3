@@ -5,11 +5,10 @@ from src import exercise_1 as ex1
 
 
 class BroadcastingAnalyzer:
-    """
-    Analyze the audio metadata of a video and show \
-    in which standard such video can fit in.
-    """
+    """Analyze the audio metadata of a video."""
+
     def __init__(self):
+        """No params."""
         self.standard_to_audio = {
             "DVB-T": ["AAC", "AC3", "MP3"],
             "ISDB-T": ["AAC"],

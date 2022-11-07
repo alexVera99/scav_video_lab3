@@ -9,7 +9,8 @@ import src.exercise_1 as ex1
 
 
 class Codec(Enum):
-    """Describe the possible codecs in our module"""
+    """Describe the possible codecs in our module."""
+
     ACC = "m4a"
     MP3 = "mp3"
 
@@ -51,7 +52,7 @@ def export_audio_from_video(filename_path: pathlib.Path,
                             reduce_bitrate: bool = False,
                             output_filename: str = ""):
     """
-    Extract the audio from a given video and export it as\
+    Extract the audio from a given video and export it as \
     MP3 stereo track.
 
     :param filename_path: path of the video
@@ -60,7 +61,6 @@ def export_audio_from_video(filename_path: pathlib.Path,
     :param output_filename: filename of the output video
     :return: filename path of the created video
     """
-
     if output_filename == "":
         video_name = filename_path.name.split(".")[0]
         output_filename = f"{video_name}"
@@ -93,6 +93,7 @@ def build_container(video_filename_path: pathlib.Path,
                     acc_audio_filename_path: pathlib.Path,
                     output_filename_path: pathlib.Path = pathlib.Path("")):
     """
+    Build container with the video, the mp3 audio and acc audio.
 
     :param video_filename_path: video path
     :param mp3_audio_filename_path: mp3 audio path
@@ -147,8 +148,8 @@ def run_pipeline(filename_path: pathlib.Path,
                                                       Codec.ACC,
                                                       reduce_bitrate=True)
     mp4_container_path = build_container(cut_filename_path,
-                         audio_mp3_filename_path,
-                         audio_acc_filename_path)
+                                         audio_mp3_filename_path,
+                                         audio_acc_filename_path)
 
     return mp4_container_path
 
