@@ -9,84 +9,87 @@ import src.exercise_3 as ex_3
 import src.exercise_4 as ex_4
 
 
-def execute_exercise_1_option():
-    """
-    Execute logic for exercise 1.
+class ExerciseExecutor:
+    """Execute the exercise for P2."""
+    @staticmethod
+    def execute_exercise_1_option():
+        """
+        Execute logic for exercise 1.
 
-    :return: no return
-    """
-    video_filename = input("Video filename (it must be a valid relative"
-                           " or absolute valid path): ")
-    video_filename = pathlib.Path(video_filename)
+        :return: no return
+        """
+        video_filename = input("Video filename (it must be a valid relative"
+                               " or absolute valid path): ")
+        video_filename = pathlib.Path(video_filename)
 
-    parser = ex_1.FfmpegMetadataParser()
+        parser = ex_1.FfmpegMetadataParser()
 
-    metadata = parser.get_metadata(video_filename)
+        metadata = parser.get_metadata(video_filename)
 
-    print("\nThe metadata found is:\n")
-    print(json.dumps(metadata, indent=4))
+        print("\nThe metadata found is:\n")
+        print(json.dumps(metadata, indent=4))
 
+    @staticmethod
+    def execute_exercise_2_option():
+        """
+        Execute logic for exercise 2.
 
-def execute_exercise_2_option():
-    """
-    Execute logic for exercise 2.
+        :return: no return
+        """
+        video_filename = input("Video filename (it must be a valid relative"
+                               " or absolute valid path): ")
+        video_filename = pathlib.Path(video_filename)
 
-    :return: no return
-    """
-    video_filename = input("Video filename (it must be a valid relative"
-                           " or absolute valid path): ")
-    video_filename = pathlib.Path(video_filename)
+        start_cut = int(input("Second number to start cut: "))
+        n_secs_cut = int(input("Number of seconds of the resulting video: "))
 
-    start_cut = int(input("Second number to start cut: "))
-    n_secs_cut = int(input("Number of seconds of the resulting video: "))
+        mp4_container = ex_2.run_pipeline(video_filename,
+                                          start_cut,
+                                          n_secs_cut)
 
-    mp4_container = ex_2.run_pipeline(video_filename,
-                                      start_cut,
-                                      n_secs_cut)
+        print(f"Video created in {mp4_container}")
 
-    print(f"Video created in {mp4_container}")
+    @staticmethod
+    def execute_exercise_3_option():
+        """
+        Execute logic for exercise 3.
 
+        :return:
+        """
+        video_filename = input("Video filename (it must be a valid relative"
+                               " or absolute valid path): ")
+        video_filename = pathlib.Path(video_filename)
 
-def execute_exercise_3_option():
-    """
-    Execute logic for exercise 3.
+        target_width = int(input("Target width (must be multiple of 2 or "
+                                 "-1 to create automatically based on the "
+                                 "other dimension):\n"))
 
-    :return:
-    """
-    video_filename = input("Video filename (it must be a valid relative"
-                           " or absolute valid path): ")
-    video_filename = pathlib.Path(video_filename)
+        target_height = int(input("Target height (must be multiple of 2 or "
+                                  "-1 to create automatically based on the "
+                                  "other dimension):\n"))
 
-    target_width = int(input("Target width (must be multiple of 2 or "
-                             "-1 to create automatically based on the "
-                             "other dimension):\n"))
+        out_filename = ex_3.resize_video(video_filename,
+                                         target_width,
+                                         target_height)
 
-    target_height = int(input("Target height (must be multiple of 2 or "
-                              "-1 to create automatically based on the "
-                              "other dimension):\n"))
+        print(f"Video created in {out_filename}")
 
-    out_filename = ex_3.resize_video(video_filename,
-                                     target_width,
-                                     target_height)
+    @staticmethod
+    def execute_exercise_4_option():
+        """
+        Execute logic for exercise 4.
 
-    print(f"Video created in {out_filename}")
+        :return: no return
+        """
+        video_filename = input("Video filename (it must be a valid relative"
+                               " or absolute valid path): ")
 
+        analyzer = ex_4.BroadcastingAnalyzer()
+        standards = analyzer.analyze(video_filename)
 
-def execute_exercise_4_option():
-    """
-    Execute logic for exercise 4.
-
-    :return: no return
-    """
-    video_filename = input("Video filename (it must be a valid relative"
-                           " or absolute valid path): ")
-
-    analyzer = ex_4.BroadcastingAnalyzer()
-    standards = analyzer.analyze(video_filename)
-
-    print("\nThe recommended standards are:")
-    print("".join([f"{i}) {_st}\n"
-                   for i, _st in enumerate(standards, start=1)]))
+        print("\nThe recommended standards are:")
+        print("".join([f"{i}) {_st}\n"
+                       for i, _st in enumerate(standards, start=1)]))
 
 
 def main():
@@ -114,13 +117,13 @@ def main():
 
         print("Please, provide a valid option")
     if option == 1:
-        execute_exercise_1_option()
+        ExerciseExecutor.execute_exercise_1_option()
     if option == 2:
-        execute_exercise_2_option()
+        ExerciseExecutor.execute_exercise_2_option()
     if option == 3:
-        execute_exercise_3_option()
+        ExerciseExecutor.execute_exercise_3_option()
     if option == 4:
-        execute_exercise_4_option()
+        ExerciseExecutor.execute_exercise_4_option()
 
 
 if __name__ == "__main__":
