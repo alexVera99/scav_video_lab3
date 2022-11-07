@@ -154,7 +154,6 @@ def run_pipeline(filename_path: pathlib.Path,
     return mp4_container_path
 
 
-
 def main():
     """
     Test the above functions.

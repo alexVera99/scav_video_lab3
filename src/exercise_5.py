@@ -85,7 +85,8 @@ def execute_exercise_4_option():
     standards = analyzer.analyze(video_filename)
 
     print("\nThe recommended standards are:")
-    print("".join([f"{i}) {_st}\n" for i, _st in enumerate(standards, start=1)]))
+    print("".join([f"{i}) {_st}\n"
+                   for i, _st in enumerate(standards, start=1)]))
 
 
 def main():

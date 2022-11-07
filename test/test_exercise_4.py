@@ -25,8 +25,8 @@ class TestExercise4(unittest.TestCase):
         :return: no return
         """
         expected_result = sorted(["DVB-T",
-                           "ISDB-T",
-                           "DTMB"])
+                                  "ISDB-T",
+                                  "DTMB"])
         analyzer = ex4.BroadcastingAnalyzer()
         broadcasting_standards = analyzer.analyze(self.video_filename)
         broadcasting_standards = sorted(broadcasting_standards)
@@ -40,8 +40,8 @@ class TestExercise4(unittest.TestCase):
         :return: no return
         """
         expected_result = sorted(["DVB-T",
-                           "ISDB-T",
-                           "DTMB"])
+                                  "ISDB-T",
+                                  "DTMB"])
         analyzer = ex4.BroadcastingAnalyzer()
         broadcasting_standards = analyzer.analyze(self.video_filename_2)
         broadcasting_standards = sorted(broadcasting_standards)
